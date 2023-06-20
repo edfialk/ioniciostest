@@ -1,0 +1,127 @@
+ol,
+ul {
+  padding-left: 1em;
+}
+li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.ul {
+  text-decoration: underline;
+}
+.strong {
+  font-weight: 700;
+}
+.i {
+  font-style: italic;
+}
+.small {
+  font-size: 0.8em;
+}
+.p-0 {
+  padding: 0 !important;
+}
+.pe-1 {
+  padding-right: 0.5em;
+}
+.py-0 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.py-1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+.my-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.my-1 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mb-1 {
+  margin-bottom: 0.5em;
+}
+.mt-0 {
+  margin-top: 0;
+}
+.step-1 {
+  background: var(--ion-color-step-500);
+}
+.heading {
+  @extend .strong, .ul;
+  text-align: center;
+}
+.toolbar-title {
+  text-overflow: unset;
+  white-space: unset!important;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  color: #000;
+}
+thead tr {
+  background-color: #ddd;
+  text-align: left;
+}
+tbody tr {
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+th,
+td {
+  padding: 4px 5px;
+  border-right: 1px solid #ddd;
+}
+th:last-of-type,
+td:last-of-type {
+  border-right: 0;
+}
+td.blue {
+  background-color: #ddebf7;
+}
+td.yellow {
+  background-color: #fce4d6;
+}
+td.green {
+  background-color: #e2efda;
+}
+
+.swiper {
+  background: var("--ion-color-step-500", #AAA);
+}
+
+.icon-disabled {
+  color: #DDD;
+}
+
+@media (prefers-color-scheme: dark) {
+  hr {
+    border-top: 1px solid #ccc;
+  }
+  .icon-disabled {
+    color: #333;
+  }
+}
+
+// .ion-page, ion-page {
+//   height: 100%;
+//   width: 100%;
+// }

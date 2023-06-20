@@ -59,4 +59,33 @@ import { ref } from 'vue';
 
 const protocols = ref(getProtocols());
 
+// const filtered = computed(() => {
+
+//   if (search.length == 0) return protocols;
+
+// })
+
 </script>
+
+
+<style scoped>
+.list-item h2 {
+  font-weight: 400;
+  white-space: initial;
+}
+ion-title {
+  text-overflow: unset;
+  white-space: unset;
+  padding: 0 5px;
+}
+.toolbar-title {
+  text-overflow: unset;
+  white-space: initial;
+}
+ion-list-header ion-label {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+</style>
+
