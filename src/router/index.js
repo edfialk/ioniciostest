@@ -13,7 +13,7 @@ const routes = [
     name: 'PostGastrostomyPlacementFeedingProtocol',
     component: () => import('../views/protocols/PostGastrostomyPlacementFeeding.vue')
   },
-/*   {
+  {
     path: '/pyloricStenosisPerioperative',
     name: 'PyloricStenosisPerioperativeProtocol',
     component: () => import('../views/protocols/PyloricStenosisPerioperative.vue')
@@ -127,7 +127,7 @@ const routes = [
     path: '/neuroblastomadiagnosis',
     name: 'NeuroBlastomaDiagnosis',
     component: () => import('../views/protocols/NeuroBlastomaDiagnosis.vue')
-  }, */
+  },
 ]
 
 const router = createRouter({
