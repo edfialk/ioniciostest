@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">OHSU MViPS</string>
+    <string name="title_activity_main">OHSU MViPS</string>
+    <string name="package_name">edu.ohsu.pediatricsurgeryprotocols</string>
+    <string name="custom_url_scheme">edu.ohsu.pediatricsurgeryprotocols</string>
+</resources>
