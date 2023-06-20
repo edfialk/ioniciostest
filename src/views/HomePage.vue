@@ -2,23 +2,38 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Inbox</ion-title>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="ion-text-wrap">Pediatric Surgery Protocols</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content :fullscreen="true">
-      <ion-refresher slot="fixed" @ionRefresh="refresh($event)">
-        <ion-refresher-content></ion-refresher-content>
-      </ion-refresher>
+      <div class="searchbar">
+        <ion-searchbar
+          class="my-1 py-0"
+        ></ion-searchbar>
+      </div>
 
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Inbox</ion-title>
-        </ion-toolbar>
-      </ion-header>
-
-      <ion-list>
-        <MessageListItem v-for="message in messages" :key="message.id" :message="message" />
+      <ion-list lines="none">
+        <template v-for="(category, index) in protocols" :key="index">
+          <div>
+            <ion-list-header>
+              <ion-label>{{ category.category }}</ion-label>
+            </ion-list-header>
+            <template
+              v-for="(protocol, pindex) in category.protocols"
+              :key="pindex"
+            >
+              <ion-item class="list-item" detail :router-link="protocol.url">
+                <ion-label>
+                  <h2>{{ protocol.title }}</h2>
+                </ion-label>
+              </ion-item>
+            </template>
+          </div>
+        </template>
       </ion-list>
     </ion-content>
   </ion-page>
@@ -29,21 +44,19 @@ import {
   IonContent,
   IonHeader,
   IonList,
+  IonListHeader,
   IonPage,
-  IonRefresher,
-  IonRefresherContent,
   IonTitle,
   IonToolbar,
-} from '@ionic/vue';
-import MessageListItem from '@/components/MessageListItem.vue';
-import { getMessages } from '@/data/messages';
+  IonSearchbar,
+  IonItem,
+  IonLabel,
+  IonMenuButton,
+  IonButtons,
+} from "@ionic/vue";
+import { getProtocols } from "@/data/protocols.js";
 import { ref } from 'vue';
 
-const messages = ref(getMessages());
+const protocols = ref(getProtocols());
 
-const refresh = (ev) => {
-  setTimeout(() => {
-    ev.detail.complete();
-  }, 3000);
-};
 </script>
