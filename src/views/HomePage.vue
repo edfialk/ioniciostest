@@ -11,13 +11,11 @@
 
     <ion-content :fullscreen="true">
       <div class="searchbar">
-        <ion-searchbar
-          class="my-1 py-0"
-        ></ion-searchbar>
+        <ion-searchbar v-model="search" class="my-1 py-0"></ion-searchbar>
       </div>
 
       <ion-list lines="none">
-        <template v-for="(category, index) in protocols" :key="index">
+        <template v-for="(category, index) in filtered" :key="index">
           <div>
             <ion-list-header>
               <ion-label>{{ category.category }}</ion-label>
@@ -55,18 +53,34 @@ import {
   IonButtons,
 } from "@ionic/vue";
 import { getProtocols } from "@/data/protocols.js";
-import { ref } from 'vue';
+import { ref, computed } from "vue";
 
-const protocols = ref(getProtocols());
+const search = ref("");
+const protocols = getProtocols();
 
-// const filtered = computed(() => {
+const filtered = computed(() => {
+  if (search.value.length == 0) return protocols;
 
-//   if (search.length == 0) return protocols;
+  let r = [];
+  protocols.forEach((c) => {
+    if (c.category.toLowerCase().indexOf(search.value.toLowerCase()) > -1) {
+      r.push(c);
+      return;
+    }
 
-// })
+    let ps = c.protocols.filter(
+      (p) => p.title.toLowerCase().indexOf(search.value.toLowerCase()) > -1
+    );
+    if (ps.length > 0)
+      r.push({
+        category: c.category,
+        protocols: ps,
+      });
+  });
 
+  return r;
+});
 </script>
-
 
 <style scoped>
 .list-item h2 {
@@ -86,6 +100,4 @@ ion-list-header ion-label {
   font-size: 24px;
   font-weight: 600;
 }
-
 </style>
-
