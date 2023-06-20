@@ -36,8 +36,8 @@ workflows:
             cd $CM_BUILD_DIR
             cd ios/App
             agvtool new-version -all $BUILD_NUMBER
-        #- name: Set up code signing settings on Xcode project
-        #  script: xcode-project use-profiles
+        - name: Set up code signing settings on Xcode project
+          script: xcode-project use-profiles
         - name: Build ipa for distribution
           script: |
             #!/bin/sh
