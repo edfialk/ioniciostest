@@ -108,20 +108,8 @@ td.green {
   background: var("--ion-color-step-500", #AAA);
 }
 
-.icon-disabled {
-  color: #DDD;
-}
-
 @media (prefers-color-scheme: dark) {
   hr {
     border-top: 1px solid #ccc;
   }
-  .icon-disabled {
-    color: #333;
-  }
 }
-
-// .ion-page, ion-page {
-//   height: 100%;
-//   width: 100%;
-// }

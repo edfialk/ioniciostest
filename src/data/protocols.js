@@ -60,7 +60,11 @@ const protocols = [
       {
         url: "/adolescentECMOCannulation",
         title: "Adolescent ECMO Cannulation at DCH"
-      },      
+      },
+      {
+        url: "/buttonbattery",
+        title: "OHSU Button Battery Protocol"
+      },
     ]
   },
   {
@@ -134,3 +138,5 @@ const protocols = [
 ];
 
 export const getProtocols = () => protocols.sort((a, b) => a.category.localeCompare(b.category));
+
+// export const getProtocol = (id: number) => protocols.find(m => m.id === id);

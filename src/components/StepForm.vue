@@ -117,14 +117,7 @@ const goForward = () => {
   font-size: 15px;
 }
 
-.sf-container {
-  /* padding: 0 8%; */
-  /* width: 100%; */
-}
-
 .sf-footer {
-  /* bottom: 0; */
-  /* position: fixed; */
   font-weight: 300;
   line-height: 1.2;
   right: 0;
@@ -140,7 +133,6 @@ const goForward = () => {
 }
 
 .sf-title {
-  /* margin-right: 0.6em; */
   font-size: 2em;
   font-weight: 900;
 }
@@ -157,7 +149,6 @@ const goForward = () => {
 .sf-options {
   list-style-type: none;
   margin: 0;
-  /* max-width: 590px; */
   min-width: 160px;
   padding: 0;
 }
@@ -178,5 +169,15 @@ const goForward = () => {
 
 .sf-option {
   font-weight: 900;
+}
+
+.icon-disabled {
+  color: #DDD;
+}
+
+@media (prefers-color-scheme: dark) {
+  .icon-disabled {
+    color: #333;
+  }
 }
 </style>
