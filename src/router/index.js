@@ -128,6 +128,11 @@ const routes = [
     name: 'NeuroBlastomaDiagnosis',
     component: () => import('../views/protocols/NeuroBlastomaDiagnosis.vue')
   },
+  {
+    path: '/buttonbattery',
+    name: 'ButtonBattery',
+    component: () => import('../views/protocols/ButtonBattery.vue')
+  }
 ]
 
 const router = createRouter({
